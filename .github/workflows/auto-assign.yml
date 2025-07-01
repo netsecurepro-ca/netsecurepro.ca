@@ -1,19 +1,21 @@
-name: Auto Assign
-on:
-  issues:
-    types: [opened]
-  pull_request:
-    types: [opened]
-jobs:
-  run:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-    steps:
-    - name: 'Auto-assign issue'
-      uses: pozil/auto-assign-issue@v1
-      with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: milyes
-          numOfAssignee: 1
+nom : Attribution automatique
+
+sur :
+  problèmes :
+    types : [ouvert]
+  pull_request :
+    types : [ouvert]
+
+emplois :
+  courir :
+    fonctionne sur : ubuntu-latest
+    autorisations :
+      problèmes : écrire
+      pull-requests : écriture
+    étapes :
+      - nom : « Problème d'attribution automatique »
+        utilisations : pozil/auto-assign-issue@v1
+        avec :
+          jeton de dépôt : ${{ secrets.GITHUB_TOKEN }}
+          cessionnaires : [milyes, netsecurebot]
+          nombre de cessionnaires : 1
